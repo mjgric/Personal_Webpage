@@ -55,12 +55,25 @@ body {
   width: 100%;
 }
 
+
 .navitem {
-  border: color white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 4rem solid white;
-  border: 5px solid white;
-  border-radius: 20px;
+  display: inline-block;       /* Shrinks to fit text */
+  padding: 0.5rem 1rem;       /* Space inside the border */
+  border: 2px solid #06e173;  /* Default border color */
+  border-radius: 12px;        /* Rounded corners */
+  background-color: #e0ffe5;  /* Fill color inside the border */
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #024817;             /* Default text color */
+  transition: all 0.3s ease;  /* Smooth transition when active */
 }
+
+/* Only override what changes for the active item */
+.navitem.activeNavItem {
+  border-color: #024817;      /* Darker border for active */
+  border-radius: 24px;        /* More rounded corners */
+  color: #000000;             /* Darker text */
+}
+  
+
 
