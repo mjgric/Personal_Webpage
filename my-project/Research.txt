@@ -1,0 +1,11 @@
+HTML Research: 
+https://www.youtube.com/watch?v=pQN-pnXPaVg
+
+Working on installing CSS, 
+This requires installing Node.JS as well as remote signing the current user
+so Node.JS can run scripts on the current user.
+
+Nice installation video:
+https://www.youtube.com/watch?v=SPr-1cwVn1k
+
+
