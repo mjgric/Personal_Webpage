@@ -21,3 +21,15 @@ body {
   line-height: 1.5;
 } 
 
+.Title-Text {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, #07ff83, #024817);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
