@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name = "Description" content = "This is the personal website of Morgan Gricius"/>
+    <meta name = "author" content = "Morgan Gricius"/> <!-- Author Meta Data -->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/> <!-- Scaling for desktop v mobile devices-->
+    <link rel = "stylesheet" href = "src/style.css" /> <!-- This is the link to the tailwind css that will be used-->
+    <Script type = "module" src="src/scripts.ts"></Script> <!-- This is the link to the typescript file that will be used for the navbar-->
+    <title>Morgan's Hobbies</title> <!-- this will show up as the title of the webpage when hovering over a tab -->
 </head>
 <div class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-    <ul><a href = "aboutme.html" id = "aboutme"> About Me </a> </ul>
+    <ul><a class = "navitem" href = "aboutme.html" id = "aboutme"> About Me </a> </ul>
     <ul><a class = "navitem activeNavItem" href = "hobbies.html" id = "hobbies"> hobbies </a> </ul>
-    <ul><a href = "anime.html" id = "anime"> anime </a> </ul>
-    <ul><a href = "home.html" id = "home"> home </a> </ul>
+    <ul><a class = "navitem" href = "anime.html" id = "anime"> anime </a> </ul>
+    <ul><a class = "navitem" href = "home.html" id = "home"> home </a> </ul>
   </div>
 <body>
     <h2 class = "Sub Section Header"> Video Games </h2>
