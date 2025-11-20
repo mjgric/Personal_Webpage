@@ -36,11 +36,15 @@ body {
 
 .About-Me-Header {
   text-align: center;
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  color: #24332c;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* color: #24332c; */
+  background: linear-gradient(to top, rgb(77, 126, 90), rgb(3, 70, 25));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .navbarContainer { 
@@ -51,7 +55,7 @@ body {
   flex-wrap: wrap; 
   background-color: #0c1e0b;
   padding: 1rem;
-  float: left;
+  /* float: left; */
   width: 100%;
 }
 
@@ -66,6 +70,8 @@ body {
   font-size: 1.5rem;
   color: #024817;             /* Default text color */
   transition: all 0.3s ease;  /* Smooth transition when active */
+  justify-content: center;
+  margin: 1rem;
 }
 
 /* Only override what changes for the active item */
@@ -73,6 +79,19 @@ body {
   border-color: #024817;      /* Darker border for active */
   border-radius: 24px;        /* More rounded corners */
   color: #000000;             /* Darker text */
+}
+
+#Fishing_Image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#Description {
+  text-align: center;
+  margin-left: 12rem;
+  margin-right: 12rem;
 }
   
 
