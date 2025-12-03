@@ -9,13 +9,10 @@
     <Script type = "module" src="src/scripts.ts"></Script> <!-- This is the link to the typescript file that will be used for the navbar-->
     <title>Morgan's Anime Reccomendations</title> <!-- this will show up as the title of the webpage when hovering over a tab -->
 </head>
-<div class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-    <a class = "navitem" href = "home.html" id = "home"> Home </a> 
-    <a class = "navitem" href = "aboutme.html" id = "aboutme"> About Me </a>
-    <a class = "navitem" href = "hobbies.html" id = "hobbies"> Hobbies </a>
-    <a class = "navitem activeNavItem" href = "anime.html" id = "anime"> Anime </a> 
-    
-  </div>
+<div id = "navbar"> </div>
+<script type = "module"> import {createNavbar} from './src/scripts.ts';
+      createNavbar();
+    </script>
 <body>
     Anime
 </body>

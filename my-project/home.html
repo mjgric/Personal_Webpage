@@ -6,14 +6,12 @@
     <meta name = "author" content = "Morgan Gricius"/> <!-- Author Meta Data -->
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/> <!-- Scaling for desktop v mobile devices-->
     <link rel = "stylesheet" href = "src/style.css" /> <!-- This is the link to the tailwind css that will be used-->
-    <Script type = "module" src="src/scripts.ts"></Script> <!-- This is the link to the typescript file that will be used for the navbar-->
+    <Script type = "module" src="src/scripts.ts">
+    </Script> <!-- This is the link to the typescript file that will be used for the navbar-->
     <title>Morgan's Home Page</title> <!-- this will show up as the title of the webpage when hovering over a tab -->
   </head>
-    <div class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-    <a class = "navitem activeNavItem" href = "home.html" id = "home"> Home </a>
-    <a class = "navitem" href = "aboutme.html" id = "aboutme"> About Me </a>
-    <a class = "navitem" href = "hobbies.html" id = "hobbies"> Hobbies </a>
-    <a class = "navitem" href = "anime.html" id = "anime"> Anime </a>
-
-  </div>
+    <div id = "navbar"> </div>
+    <script type = "module"> import {createNavbar} from './src/scripts.ts';
+      createNavbar();
+    </script>
     <body>
