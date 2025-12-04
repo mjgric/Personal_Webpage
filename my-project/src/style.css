@@ -49,6 +49,7 @@ body {
 }
 
 .navbarContainer { 
+  position: relative;
   display: flex;
   justify-content: space-around;
   justify-content: space-between;
@@ -58,6 +59,7 @@ body {
   padding: 1rem;
   /* float: left; */
   width: 100%;
+  gap: 10px;
 }
 
 
@@ -73,6 +75,17 @@ body {
   transition: all 0.3s ease;  /* Smooth transition when active */
   justify-content: center;
   margin: 1rem;
+}
+
+#navbarToggle {
+  width: 60px;
+  cursor: pointer;
+  object-fit: contain;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
 }
 
 /* Only override what changes for the active item */

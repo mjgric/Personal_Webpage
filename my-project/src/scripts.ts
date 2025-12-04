@@ -36,7 +36,7 @@ export function createNavbar() {
     // depending on if the current HTML is open
     navbar.innerHTML = `
         <nav class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-        <img src = navigation-bar.png> 
+        <img src = src/navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
         ${pages.map(page => ` 
                 <a class="navitem ${page.href === currPage ? "activeNavItem" : ""}" 
                    href="${page.href}">
@@ -44,6 +44,9 @@ export function createNavbar() {
                 </a>
             `).join("")}
         </nav>`;
+
+        const toggleButton = document.getElementById("navbarToggle");
+        toggleButton?.addEventListener("click", toggleNavbar)
         // notes for myself:
         /**
          * the interface keyword in js defines the properties of
