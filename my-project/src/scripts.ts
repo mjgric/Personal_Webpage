@@ -1,8 +1,19 @@
 "use strict";
 function toggleNavbar() {
-    const menu = document.getElementById("navbarMenu");
-    if (!menu) return;
-    menu.classList.toggle("open");
+  const menu = document.getElementById("navbarMenu");
+  const toggle = document.getElementById("navbarToggle");
+  if (!menu || !toggle) return;
+
+  const toggleRect = toggle.getBoundingClientRect();
+  const navbarRect = menu.getBoundingClientRect();
+
+  const x = toggleRect.left + toggleRect.width / 2 - navbarRect.left;
+  const y = toggleRect.top + toggleRect.height / 2 - navbarRect.top;
+
+  menu.style.setProperty("--clip-x", `${x}px`);
+  menu.style.setProperty("--clip-y", `${y}px`);
+
+  menu.classList.toggle("closed");
 }
 
 document.getElementById("navbarToggle")?.addEventListener("click", toggleNavbar);
