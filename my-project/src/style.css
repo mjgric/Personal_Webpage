@@ -53,7 +53,7 @@ body {
   display: flex;
   align-items: center;
   /* flex-wrap: wrap;  */
-  background-color: #0c1e0b;
+  /* background-color: #0c1e0b; */
   padding: 1rem;
   /* float: left; */
   width: 100%;
@@ -78,10 +78,9 @@ body {
 }
 
 #navbarToggle {
-  width: 60px;
+  width: 40px;
   cursor: pointer;
   object-fit: contain;
-  transform: translateY(-25%);
   z-index: 10;
 
 
@@ -108,55 +107,54 @@ body {
 }
 
 .navbarMenu {
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: #222;
-  padding-top: 80 px;
+  background: #0c1e0b;
   z-index: 5;
-  --clip-x: 50%;
-  --clip-y: 50%;
 
-  clip-path: circle(150% at 40px 30px);
-  transition: clip-path 0.6s cubic-bezier(.4,0,.2,1);
+  --clip-x: 30%;
+  --clip-y: 30%;
+
+  /* OPEN STATE — now uses dynamic origin */
+  clip-path: circle(150% at var(--clip-x) var(--clip-y));
+  transition: clip-path 1.6s ease-in-out;
 }
 
 .navbarMenu.closed {
-  clip-path: circle(30px at var(--clip-x) var(--clip-y));
+  /* CLOSED STATE — shrinks to the toggle */
+  clip-path: circle(24px at var(--clip-x) var(--clip-y));
 }
-
- /* ::before represents a psuedo element in html
- it allows us to add properties like width, height, color and more
- we must alsways set (content: "" or somethign else like this otherwise it wont
- appear. */
-
 
 .navbarMenu::before {
   content: "";
   position: absolute;
-  width: 76px;                 /* 2 x radius of 38px */
-  height: 76px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
+  z-index: -1;
 
-  left: calc(var(--clip-x, 50%) - 38px);
-  top: calc(var(--clip-y, 50%) - 38px);
+  left: calc(var(--clip-x) - 24px);
+  top: calc(var(--clip-y) - 24px);
 
-  background-color: #0c1e0b;   /* circle fill */
-  border: 2px solid #2ea36a;   /* slightly lighter green border */
-  
+  background-color: #0c1e0b;
+  border: 2px solid #2ea36a;
+
   opacity: 0;
+
+  /* FIX: circle goes BEHIND the menu */
   z-index: 10;
-  transition: opacity 0.3s ease;
+
 }
 
-/* Show circle when closed */
 .navbarMenu.closed::before {
-  opacity: 1;
+  opacity: 1;      /* visible when closed */
 }
+
   
 
 
