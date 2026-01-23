@@ -1,14 +1,10 @@
 "use strict";
 function toggleNavbar() {
-    const navbar = document.getElementById("navbar");
-    if (navbar) {
-        if (navbar.style.display === "block") {
-            navbar.style.display = "none";
-        } else {
-            navbar.style.display = "block";
-        }
-    }
+    const menu = document.getElementById("navbarMenu");
+    if (!menu) return;
+    menu.classList.toggle("open");
 }
+
 document.getElementById("navbarToggle")?.addEventListener("click", toggleNavbar);
 
 
@@ -37,12 +33,15 @@ export function createNavbar() {
     navbar.innerHTML = `
         <nav class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
         <img src = src/navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
+
+        <div id = "navbarMenu" class = "navbarMenu">
         ${pages.map(page => ` 
                 <a class="navitem ${page.href === currPage ? "activeNavItem" : ""}" 
                    href="${page.href}">
                    ${page.name}
                 </a>
             `).join("")}
+            </div>
         </nav>`;
 
         const toggleButton = document.getElementById("navbarToggle");

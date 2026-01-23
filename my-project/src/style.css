@@ -107,6 +107,18 @@ body {
   margin-left: 12rem;
   margin-right: 12rem;
 }
+
+.navbarMenu {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  padding-top: 60px;
+
+  clip-path: circle(150% at 40px 30px);
+  transition: clip-path 0.6px ease-in-out;
+}
   
 
 
