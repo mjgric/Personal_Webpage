@@ -1,7 +1,7 @@
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, sans-serif;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -21,13 +21,13 @@ body {
   line-height: 1.5;
 } 
 
-.Title-Text {
+#Title-Text {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: #24332c;
+  /* color: #95ddbe; */
   /* background: linear-gradient(180deg, #07ff83, #024817);
   -webkit-background-clip: text;
   background-clip: text;
@@ -100,10 +100,37 @@ body {
   width: 50%;
 }
 
-#Description {
+#Description1 {
   text-align: center;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-right: 18rem;
+}
+
+#Description2 {
+  text-align: center;
+  margin-left: 16rem;
+}
+
+#Description3 {
+  text-align: center;
+  margin-right: 13rem;
+}
+
+#GBN {
+  border-radius: 30px;
+  width: 30%;
+  float: right;
+}
+
+#UNICEF {
+  border-radius: 30px;
+  width: 25%;
+  float: left;
+}
+
+#CSH {
+  border-radius: 30px;
+  width: 20%;
+  float: right;
 }
 
 .navbarMenu {
@@ -154,6 +181,23 @@ body {
 .navbarMenu.closed::before {
   opacity: 1;      /* visible when closed */
 }
+
+.element_box {
+  display: inline-block;       /* Shrinks to fit text */
+  padding: 0.5rem 1rem;       /* Space inside the border */
+  border: 2px solid #06e173;  /* Default border color */
+  border-radius: 60px;        /* Rounded corners */
+  background-color: #e0ffe5de;  /* Fill color inside the border */
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #024817;             /* Default text color */
+  transition: all 0.3s ease;  /* Smooth transition when active */
+  justify-content: center;
+  margin: 1rem;
+  margin-top: 20px;
+}
+
+
 
   
 

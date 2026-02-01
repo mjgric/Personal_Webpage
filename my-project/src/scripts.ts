@@ -43,7 +43,7 @@ export function createNavbar() {
     // depending on if the current HTML is open
     navbar.innerHTML = `
         <nav class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-        <img src = src/navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
+        <img src = public/navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
 
         <div id = "navbarMenu" class = "navbarMenu">
         ${pages.map(page => ` 
