@@ -8,6 +8,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424b5;
 
+  overflow-x: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,6 +19,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  align-items: center;
   line-height: 1.5;
 } 
 
@@ -52,36 +54,34 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  /* flex-wrap: wrap;  */
-  /* background-color: #0c1e0b; */
+  justify-content: space-between;
   padding: 1rem;
-  /* float: left; */
   width: 100%;
-  gap: 10px;
-  min-height: 80px;
+  /* gap: 10px; */
+  min-height: 70px;
   box-sizing: border-box;
 }
 
 
 .navitem {
   display: inline-block;       /* Shrinks to fit text */
-  padding: 0.5rem 1rem;       /* Space inside the border */
+  padding: 0.4rem 0.4rem;       /* Space inside the border */
   border: 2px solid #06e173;  /* Default border color */
   border-radius: 12px;        /* Rounded corners */
   background-color: #e0ffe5;  /* Fill color inside the border */
   font-weight: bold;
-  font-size: 1.5rem;
-  color: #024817;             /* Default text color */
+  font-size: clamp(0.9rem, 2vw, 1.25rem); /* Responsive font size */
+  color: #024817; 
+  text-decoration: none;            /* Default text color */
   transition: all 0.3s ease;  /* Smooth transition when active */
-  justify-content: center;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 #navbarToggle {
-  width: 40px;
+  width: 35px;
   cursor: pointer;
-  object-fit: contain;
-  z-index: 10;
+  /* object-fit: contain; */
+  z-index: 20;
 
 
 }
@@ -92,54 +92,55 @@ body {
   border-radius: 24px;        /* More rounded corners */
   color: #000000;             /* Darker text */
 }
+@media (max-width: 768px) {
 
-#Fishing_Image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  .navbarContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbarMenu {
+    position: relative;
+    box-sizing: border-box;
+    top: 100%;
+    width: 100%;
+    flex-direction: column;
+    background-color: #0c1e0b;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 5rem;
+    /* padding-top: 80%; */
+    display: none; /* hidden by default */
+  }
+
+  .navbarMenu.open {
+    display: flex;
+  }
+
+  .navitem {
+    width: 80%;
+    text-align: center;
+  }
+
+  #navbarToggle {
+    margin-bottom: 1rem;
+  }
+
+
 }
 
-#Description1 {
-  text-align: center;
-  margin-right: 18rem;
-}
 
-#Description2 {
-  text-align: center;
-  margin-left: 16rem;
-}
-
-#Description3 {
-  text-align: center;
-  margin-right: 13rem;
-}
-
-#GBN {
-  border-radius: 30px;
-  width: 30%;
-  float: right;
-}
-
-#UNICEF {
-  border-radius: 30px;
-  width: 25%;
-  float: left;
-}
-
-#CSH {
-  border-radius: 30px;
-  width: 20%;
-  float: right;
-}
 
 .navbarMenu {
   position: absolute;
+  box-sizing: border-box;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   background: #0c1e0b;
   z-index: 5;
@@ -147,13 +148,13 @@ body {
   --clip-x: 30%;
   --clip-y: 30%;
 
-  /* OPEN STATE — now uses dynamic origin */
+  /* dynamic origin */
   clip-path: circle(150% at var(--clip-x) var(--clip-y));
   transition: clip-path 1.6s ease-in-out;
 }
 
 .navbarMenu.closed {
-  /* CLOSED STATE — shrinks to the toggle */
+  /* shirnks to toggle */
   clip-path: circle(24px at var(--clip-x) var(--clip-y));
 }
 
@@ -184,9 +185,13 @@ body {
 
 .element_box {
   display: inline-block;       /* Shrinks to fit text */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0.5rem 1rem;       /* Space inside the border */
   border: 2px solid #06e173;  /* Default border color */
   border-radius: 60px;        /* Rounded corners */
+  box-sizing: border-box;
   background-color: #e0ffe5de;  /* Fill color inside the border */
   font-weight: bold;
   font-size: 1.25rem;
@@ -195,6 +200,86 @@ body {
   justify-content: center;
   margin: 1rem;
   margin-top: 20px;
+}
+
+#Fishing_Image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* #Description1 {
+  text-align: center;
+  margin-right: 18rem;
+}
+
+#Description2 {
+  text-align: center;
+  margin-left: 16rem;
+}
+
+#Description3 {
+  text-align: center;
+  margin-right: 13rem;
+}
+
+#GBN {
+  border-radius: 30px;
+  width: 30%;
+  float: right;
+}
+
+#UNICEF {
+  border-radius: 30px;
+  width: 25%;
+  float: left;
+}
+
+#CSH {
+  border-radius: 30px;
+  width: 20%;
+  float: right;
+} */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+}
+
+.section img {
+  width: 200px;
+  border-radius: 30px;
+}
+
+.section p {
+  flex: 1;
+  text-align: center;
+}
+
+/* Alternate layout (image on left) */
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .About-Me-Header {
+    font-size: 2.5rem;
+  }
+
+  #Fishing_Image {
+    width: 90%;
+  }
 }
 
 

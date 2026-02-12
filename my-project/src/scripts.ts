@@ -16,6 +16,8 @@ function toggleNavbar() {
   menu.classList.toggle("closed");
 }
 
+
+
 document.getElementById("navbarToggle")?.addEventListener("click", toggleNavbar);
 
 

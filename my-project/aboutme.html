@@ -9,18 +9,20 @@
     <Script type = "module" src="src/scripts.ts"></Script> <!-- This is the link to the typescript file that will be used for the navbar-->
     <title>Morgan's About Me</title> <!-- this will show up as the title of the webpage when hovering over a tab -->
   </head>
+  <body>
   <div id = "navbar"> </div>
   <script type = "module"> import {createNavbar} from './src/scripts.ts';
       createNavbar();
     </script>
     
 
-  <body>
+  
     <div class = element_box>
     <Header class = "About-Me-Header"> About Me </Header>
     <img src = Fishing.jpeg alt = "A nice image of me fishing with a fish in my hand" id = "Fishing_Image">
     
     <h2 id = "Title-Text"> This is me! </h2>
+    <div class = section>
     <a href = https://gbn.glenbrook225.org>
     <img src="GBN_Logo.png" alt = "A logo image of my Highschool" id = GBN >
     </a>
@@ -28,6 +30,9 @@
       but personally winter is my favorite. I love a good hot choclate and some sledding in the cold. I love to get outdoors and particpate in anything that 
       makes me active weather it's fishing, camping, a sport, or a cookout I'm there for it! 
     </p>
+    </div>
+
+    <div class = "section">
     <a href = "https://gbn.glenbrook225.org/activities-arts/clubs-organizations/philanthropic-service-clubs">
     <img id = UNICEF src = UNICEF_Logo.png>
     </a>
@@ -39,6 +44,9 @@
       my favorite volunteer assignment was working with spartan service club to replant and fertalize
       some shrubs around our entryways. 
     </p>
+    </div>
+
+    <div class = section>
     <a href = "https://csh.rit.edu/">
       <img src = CSH_Logo.jpg id = CSH>
     </a>
@@ -48,6 +56,7 @@
       House as a first year member and I've had a great time there so far.  
 
     </p>
+    </div>
     </div>
 
   </body>
