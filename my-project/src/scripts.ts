@@ -1,96 +1,75 @@
 "use strict";
-function toggleNavbar() {
-  const menu = document.getElementById("navbarMenu");
+
+// ---------- Page Interface and Pages ----------
+interface Page {
+  name: string; // display name
+  href: string; // file path
+}
+
+const pages: Page[] = [
+  { name: "Home", href: "home.html" },
+  { name: "About Me", href: "aboutme.html" },
+  { name: "Hobbies", href: "hobbies.html" },
+  { name: "Anime", href: "anime.html" },
+];
+
+// ---------- Clip-Path Functions ----------
+function updateClip(): void {
   const toggle = document.getElementById("navbarToggle");
-  if (!menu || !toggle) return;
+  const menu = document.getElementById("navbarMenu");
+  if (!toggle || !menu) return;
 
   const toggleRect = toggle.getBoundingClientRect();
-  const navbarRect = menu.getBoundingClientRect();
+  const menuRect = menu.getBoundingClientRect();
 
-  const x = toggleRect.left + toggleRect.width / 2 - navbarRect.left;
-  const y = toggleRect.top + toggleRect.height / 2 - navbarRect.top;
+  const x = toggleRect.left + toggleRect.width / 2 - menuRect.left;
+  const y = toggleRect.top + toggleRect.height / 2 - menuRect.top;
 
   menu.style.setProperty("--clip-x", `${x}px`);
   menu.style.setProperty("--clip-y", `${y}px`);
-
-  menu.classList.toggle("closed");
 }
 
-
-
-document.getElementById("navbarToggle")?.addEventListener("click", toggleNavbar);
-
-
-interface Page {
-    name: string; // display name
-    href: string; // file path
+function toggleNavbar(): void {
+  updateClip(); // make sure the circle is centered on click
+  const menu = document.getElementById("navbarMenu");
+  menu?.classList.toggle("closed");
 }
 
-const pages: Page[] = [ // All current Html Pages
-    { name: "Home", href: "home.html" },
-    { name: "About Me", href: "aboutme.html" },
-    { name: "Hobbies", href: "hobbies.html" },
-    { name: "Anime", href: "anime.html" },
-]
+// Update clip on window resize
+window.addEventListener("resize", updateClip);
 
-const toggle = document.getElementById("navbarToggle");
-const menu = document.getElementById("navbarMenu");
+// ---------- Navbar Creation ----------
+export function createNavbar(): void {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) {
+    console.error("Navbar container not found!");
+    return;
+  }
 
-function updateClipPath() {
-    const rect = toggle?.getBoundingClientRect();
-    const x = rect ? rect.left + rect.width / 2 : 0;
-    const y = rect ? rect.top + rect.height / 2 : 0;
-    menu?.style.setProperty("--clip-x", `${x}px`);
-    menu?.style.setProperty("--clip-y", `${y}px`);
-}
+  const currPage = window.location.pathname.split("/").pop();
 
-toggle?.addEventListener("click", () => {
-    updateClipPath();
-    menu?.classList.toggle("closed");
-})
-window.addEventListener("resize", updateClipPath);
+  navbar.innerHTML = `
+    <nav class="navbarContainer">
+      <img src="/navigation-bar.png" id="navbarToggle" alt="Menu Icon">
+      <div id="navbarMenu" class="navbarMenu closed">
+        ${pages
+          .map(
+            (page) => `
+          <a class="navitem ${page.href === currPage ? "activeNavItem" : ""}"
+             href="${page.href}">
+             ${page.name}
+          </a>
+        `
+          )
+          .join("")}
+      </div>
+    </nav>
+  `;
 
+  // Add click listener AFTER HTML exists
+  const toggleButton = document.getElementById("navbarToggle");
+  toggleButton?.addEventListener("click", toggleNavbar);
 
-export function createNavbar() {
-    const navbar = document.getElementById("navbar");
-    if (navbar == null) {
-        console.error("Navbar not found!")
-        return;
-    }
-
-    const currPage = window.location.pathname.split("/").pop();
-    // This method implements an array of pages that then adds a class
-    // depending on if the current HTML is open
-    navbar.innerHTML = `
-        <nav class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-        <img src = /navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
-
-        <div id = "navbarMenu" class = "navbarMenu">
-        ${pages.map(page => ` 
-                <a class="navitem ${page.href === currPage ? "activeNavItem" : ""}" 
-                   href="${page.href}">
-                   ${page.name}
-                </a>
-            `).join("")}
-            </div>
-        </nav>`;
-
-        const toggleButton = document.getElementById("navbarToggle");
-        toggleButton?.addEventListener("click", toggleNavbar)
-        // notes for myself:
-        /**
-         * the interface keyword in js defines the properties of
-         * and object such as a page. I used this to define an object
-         * with a name and a pathway or link. I then put all my pages
-         * into an array to make it easier to loop through. 
-         * pages.map creates an array of strings for every page item
-         * in pages. 
-         * 
-         * then for every page item, I use a template literal 
-         * which allows me to use variables and functions inside a string
-         * 
-         * I use this to create each html element as well as add the active
-         * class if we are on said page. I then join all the strings of the array
-         * together so that the inner html is correct. 
-         */
+  // Initial clip update so it's correctly positioned at page load
+  updateClip();
 }
