@@ -33,6 +33,24 @@ const pages: Page[] = [ // All current Html Pages
     { name: "Anime", href: "anime.html" },
 ]
 
+const toggle = document.getElementById("navbarToggle");
+const menu = document.getElementById("navbarMenu");
+
+function updateClipPath() {
+    const rect = toggle?.getBoundingClientRect();
+    const x = rect ? rect.left + rect.width / 2 : 0;
+    const y = rect ? rect.top + rect.height / 2 : 0;
+    menu?.style.setProperty("--clip-x", `${x}px`);
+    menu?.style.setProperty("--clip-y", `${y}px`);
+}
+
+toggle?.addEventListener("click", () => {
+    updateClipPath();
+    menu?.classList.toggle("closed");
+})
+window.addEventListener("resize", updateClipPath);
+
+
 export function createNavbar() {
     const navbar = document.getElementById("navbar");
     if (navbar == null) {
@@ -45,7 +63,7 @@ export function createNavbar() {
     // depending on if the current HTML is open
     navbar.innerHTML = `
         <nav class = "navbarContainer"> <!-- Navbar that will be used on all pages-->
-        <img src = public/navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
+        <img src = /navigation-bar.png id = navbarToggle alt = "Menu Icon"> 
 
         <div id = "navbarMenu" class = "navbarMenu">
         ${pages.map(page => ` 

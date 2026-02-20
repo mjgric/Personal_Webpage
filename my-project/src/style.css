@@ -58,7 +58,6 @@ body {
   padding: 1rem;
   width: 100%;
   /* gap: 10px; */
-  min-height: 70px;
   box-sizing: border-box;
 }
 
@@ -142,11 +141,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  background: #0c1e0b;
+  background: #123111;
   z-index: 5;
-
-  --clip-x: 30%;
-  --clip-y: 30%;
 
   /* dynamic origin */
   clip-path: circle(150% at var(--clip-x) var(--clip-y));
@@ -155,19 +151,19 @@ body {
 
 .navbarMenu.closed {
   /* shirnks to toggle */
-  clip-path: circle(24px at var(--clip-x) var(--clip-y));
+  clip-path: circle(25px at var(--clip-x) var(--clip-y));
 }
 
 .navbarMenu::before {
   content: "";
   position: absolute;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   z-index: -1;
 
-  left: calc(var(--clip-x) - 24px);
-  top: calc(var(--clip-y) - 24px);
+  left: calc(var(--clip-x) - 25px);
+  top: calc(var(--clip-y) - 25px);
 
   background-color: #0c1e0b;
   border: 2px solid #2ea36a;
