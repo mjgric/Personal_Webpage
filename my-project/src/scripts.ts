@@ -51,7 +51,7 @@ export function createNavbar(): void {
   navbar.innerHTML = `
     <nav class="navbarContainer">
       <img src="/navigation-bar.png" id="navbarToggle" alt="Menu Icon">
-      <div id="navbarMenu" class="navbarMenu closed">
+      <div id="navbarMenu" class="navbarMenu">
         ${pages
           .map(
             (page) => `

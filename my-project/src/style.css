@@ -196,14 +196,37 @@ body {
   border: 2px solid #06e173;  /* Default border color */
   border-radius: 60px;        /* Rounded corners */
   box-sizing: border-box;
-  background-color: #e0ffe5de;  /* Fill color inside the border */
+  background-color: #e0ffe5;  /* Fill color inside the border */
   font-weight: bold;
   font-size: 1.25rem;
+  width: 95%; /* Full width */
   color: #024817;             /* Default text color */
   transition: all 0.3s ease;  /* Smooth transition when active */
   justify-content: center;
   margin: 1rem;
   margin-top: 20px;
+}
+
+.element_box.socials {
+  display: flex;       /* Shrinks to fit text */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 16px 0;
+}
+
+#socials-header {
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-bottom: 2px solid #06e173;
 }
 
 #Fishing_Image {
@@ -284,6 +307,49 @@ body {
   #Fishing_Image {
     width: 90%;
   }
+}
+
+.social-bar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  fill: currentColor;
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.social-bar a:hover .social-icon {
+  transform: scale(1.15);
+  color: #0a66c2; /* hover color */
+}
+
+/* Hobbies CSS */
+#Hobbies-Header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to top, rgb(77, 126, 90), rgb(3, 70, 25));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Hobby-Section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  border: #eb0d0d 2px solid;
 }
 
 
