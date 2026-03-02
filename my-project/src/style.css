@@ -324,10 +324,23 @@ hr {
   cursor: pointer;
 }
 
-.social-bar a:hover .social-icon {
+.social-icon-link {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon-link img.social-icon {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+}
+.social-icon-link img.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* .social-bar a:hover .social-icon {
   transform: scale(1.15);
   color: #0a66c2; /* hover color */
-}
+/* } */ 
 
 /* Hobbies CSS */
 #Hobbies-Header {
