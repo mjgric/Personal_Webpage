@@ -1,1 +1,1 @@
-"# Personal_Projects" 
+This is the reposity for my personal webpage. This is hugely new to me as I have done zero webdev before this. I used mainly html css and some typescript to create a personal webpage that includes information about me, my hobbies and some anime that I like. 
