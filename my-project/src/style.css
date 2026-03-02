@@ -7,7 +7,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   
-  background-image: url("../public/HikingImage.jpg");
+  background-image: url("/HikingImage.jpg");
     background-repeat: no-repeat;                    /* 2. Prevent repetition */
     background-size: cover;                          /* 3. Cover the entire viewport */
     background-position: center;                     /* 4. Center the image */
@@ -188,7 +188,7 @@ body {
 }
 
 .element_box {
-  display: inline-block;       /* Shrinks to fit text */
+  display: block;       /* Shrinks to fit text */
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -199,7 +199,7 @@ body {
   background-color: #e0ffe5;  /* Fill color inside the border */
   font-weight: bold;
   font-size: 1.25rem;
-  width: 95%; /* Full width */
+  /* width: 95%; Full width */
   color: #024817;             /* Default text color */
   transition: all 0.3s ease;  /* Smooth transition when active */
   justify-content: center;
@@ -332,10 +332,8 @@ hr {
 /* Hobbies CSS */
 #Hobbies-Header {
   text-align: center;
-  font-size: 2rem;
+  font-size: 5rem;
   font-weight: bold;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   background: linear-gradient(to top, rgb(77, 126, 90), rgb(3, 70, 25));
   -webkit-background-clip: text;
   background-clip: text;
@@ -344,12 +342,33 @@ hr {
 
 .Hobby-Section {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   margin: 3rem auto;
   max-width: 1000px;
-  border: #eb0d0d 2px solid;
+  border: #000000 2px solid;
+}
+
+.Hobby-Header {
+  font-size: 3rem;
+} 
+
+.Hobby-Image {
+  width: 60%;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.Hobby-Description {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.Anime-Header {
+  font-size: 1.5rem;
 }
 
 

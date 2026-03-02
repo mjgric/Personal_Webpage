@@ -1,11 +1,12 @@
 "use strict";
 
-// ---------- Page Interface and Pages ----------
+//  Page Interface and Pages 
 interface Page {
   name: string; // display name
   href: string; // file path
 }
 
+// Pages that I can add to the navbar 
 const pages: Page[] = [
   { name: "Home", href: "home.html" },
   { name: "About Me", href: "aboutme.html" },
@@ -13,7 +14,7 @@ const pages: Page[] = [
   { name: "Anime", href: "anime.html" },
 ];
 
-// ---------- Clip-Path Functions ----------
+//  Clip-Path Functions 
 function updateClip(): void {
   const toggle = document.getElementById("navbarToggle");
   const menu = document.getElementById("navbarMenu");
@@ -38,7 +39,7 @@ function toggleNavbar(): void {
 // Update clip on window resize
 window.addEventListener("resize", updateClip);
 
-// ---------- Navbar Creation ----------
+//  Navbar Creation 
 export function createNavbar(): void {
   const navbar = document.getElementById("navbar");
   if (!navbar) {
