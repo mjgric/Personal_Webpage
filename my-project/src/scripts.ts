@@ -8,10 +8,10 @@ interface Page {
 
 // Pages that I can add to the navbar 
 const pages: Page[] = [
-  { name: "Home", href: "home.html" },
+  { name: "Home", href: "/" },
   { name: "About Me", href: "aboutme.html" },
   { name: "Hobbies", href: "hobbies.html" },
-  { name: "Anime", href: "anime.html" },
+  { name: "Anime", href: "anime.html" }
 ];
 
 //  Clip-Path Functions 
@@ -51,12 +51,12 @@ export function createNavbar(): void {
 
   navbar.innerHTML = `
     <nav class="navbarContainer">
-      <img src="/navigation-bar.png" id="navbarToggle" alt="Menu Icon">
+      <img src="navigation-bar.png" id="navbarToggle" alt="Menu Icon">
       <div id="navbarMenu" class="navbarMenu">
         ${pages
           .map(
             (page) => `
-          <a class="navitem ${page.href === currPage ? "activeNavItem" : ""}"
+          <a class="navitem ${page.href === (currPage || "/")  ? "activeNavItem" : ""}"
              href="${page.href}">
              ${page.name}
           </a>
